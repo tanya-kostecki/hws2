@@ -4,6 +4,9 @@
 
 .hw {
     margin-top: 40px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-bottom: 70px;
 }
 
 .hwTitle {
@@ -14,11 +17,13 @@
     line-height: 27px;
     letter-spacing: 0%;
     text-align: left;
-}
-
-#hw2, #hw1 {
-    margin-top: 37px;
     padding-left: 70px;
     padding-right: 70px;
 }
+
+/* #hw1 {
+    margin-top: 37px;
+    padding-left: 70px;
+    padding-right: 70px;
+} */
 
