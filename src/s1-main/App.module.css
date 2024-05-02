@@ -3,7 +3,7 @@
 }
 
 .hw {
-    margin-top: 40px;
+    margin-top: 30px;
     padding-left: 70px;
     padding-right: 70px;
     margin-bottom: 70px;
@@ -19,11 +19,16 @@
     text-align: left;
     padding-left: 70px;
     padding-right: 70px;
+    position: relative;
+    padding-bottom: 9px;
 }
 
-/* #hw1 {
-    margin-top: 37px;
-    padding-left: 70px;
-    padding-right: 70px;
-} */
+.hwTitle::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgb(217, 217, 217);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
 
