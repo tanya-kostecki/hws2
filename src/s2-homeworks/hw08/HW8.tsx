@@ -31,7 +31,7 @@ const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
 
-    const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
+    const finalPeople = people?.map((u: UserType) => <User key={u._id} u={u}/>)
 
     const sortUp = () => {
         setPeople(
@@ -52,6 +52,8 @@ const HW8 = () => {
         ) // совершеннолетние
         setCurrentSort('18')
     }
+
+    console.log(people)
 
     return (
         <div id={'hw3'}>
