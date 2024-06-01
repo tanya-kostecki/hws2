@@ -1,8 +1,19 @@
 .container {
+    width: 300px;
 }
 
 .wrapper {
+    display: flex;
+    gap: 20px;
 }
 
 .number {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
 }
+
