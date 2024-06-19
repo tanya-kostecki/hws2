@@ -20,6 +20,8 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
@@ -30,18 +32,41 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
-
+        setIsLoading(true)
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
+                setText(
+                  "...всё ок) код 200 - обычно означает что скорее всего всё ок)"
+                );
 
             })
             .catch((e) => {
                 // дописать
-
+                if (e.response.status === 500) {
+                  setCode("Код 500!");
+                  setImage(error500);
+                  setText(
+                    "эмитация ошибки на сервере ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)"
+                  );
+                } else if (e.response.status === 400) {
+                  setCode("Код 400!");
+                  setImage(error400);
+                  setText(
+                    "Ты не отправил success в body вообще! ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!"
+                  );
+                } else {
+                  setCode("Error!");
+                  setImage(errorUnknown);
+                  setText("Network Error AxiosError");
+                }
+            })
+            .finally(() => {
+                setIsLoading(false)
+                setInfo('')
             })
     }
 
@@ -56,6 +81,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        disabled={isLoading}
 
                     >
                         Send true
@@ -65,6 +91,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        disabled={isLoading}
 
                     >
                         Send false
@@ -74,6 +101,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={isLoading}
 
                     >
                         Send undefined
@@ -83,6 +111,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={isLoading}
 
                     >
                         Send null

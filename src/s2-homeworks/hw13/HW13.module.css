@@ -1,22 +1,47 @@
 .buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .responseContainer {
+    display: flex;
+    gap: 87px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .imageContainer {
+    margin-top: 90px;
 }
 
 .image {
+    width: 451px;
+    height: 192px;
 }
 
 .textContainer{
+    max-width: 510px;;
 }
 
 .code {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: left;
 }
 
 .text {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
 }
-.info {
-}
+/* .info {
+} */
