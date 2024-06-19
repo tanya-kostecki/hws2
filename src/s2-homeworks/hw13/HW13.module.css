@@ -34,7 +34,7 @@
     text-align: left;
 }
 
-.text {
+.text, .info{
     color: rgb(0, 0, 0);
     font-family: Montserrat;
     font-size: 16px;
@@ -43,5 +43,3 @@
     letter-spacing: 0%;
     text-align: left;
 }
-/* .info {
-} */
